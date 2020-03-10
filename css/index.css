@@ -1,0 +1,246 @@
+
+.jd_layout{
+  height: 1000px;
+  width: 100%;
+  max-width: 640px;
+  min-width: 300px;
+  margin:0 auto;
+  background-color: #ccc;
+}
+
+/* 顶部搜索栏 */
+.search {
+  height: 50px;
+  width: 100%;
+  /* 最大宽度，要和jd_layout一样 */
+  max-width: 640px;
+  background: #e92322;
+  /* 固定 */
+  position: fixed;
+/*？？？ 这个干什么的 */
+  z-index: 999;
+}
+/* 标志logo */
+.search-logo {
+  background: url("../images/jd-sprites.png");
+  width: 60px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 5px; 
+  /* 图片位置和大小 */
+  background-size: 200px 200px;
+  background-position:0px 96px ;
+}
+/* 输入框 */
+.search-input {
+  height: 100%;   
+  margin-left: 80px;
+  padding-right: 60px;
+}
+.search-input > input {
+  width: 100%;
+  height: 35px;
+  margin-top:8px;
+  border-radius: 30px;
+  line-height: 50px;
+  padding-left: 30px;
+}
+.search-login {
+  height: 100%;
+  width: 50px;
+  position: absolute;
+  line-height: 50px;
+  display: block;
+  right: 0;
+  top: 0;
+  color: beige;
+}
+/* ？？？？？？？？？？伪元素添加？？？ */
+.search-input::before{
+  content: "";
+  width: 27px;
+  height: 23px;
+  position: absolute;
+  background: url("../images/jd-sprites.png");
+  background-size: 200px 200px;
+  background-position: -56px -108px;
+  left: 85px;
+  top:15px;
+}
+
+
+/* 轮播图 */
+.lunimage {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  
+}
+.images {
+  width: 600%;
+  position: relative;
+  /* 移动 */
+  /* transform: translateX(-16.66%); */
+  /* 这是自身 */
+  /* left: -100%; */
+}
+.images li {
+  /* 一张图片li占的宽度 */
+  width:16.66%;
+  float: left;
+}
+.images li img {
+  /* 
+  设置轮播图为块状元素
+  这样子的话可以设置其他图片的大小
+  或者占100%
+  否则有一部分看不到的可能
+  */
+  display: block;
+  width: 100%;
+}
+.point {
+  position: absolute;
+  bottom: 5px;
+  width: 120px;
+  height: 10px;
+  /* background-color: rgb(241, 3, 241); */
+  /* 水平居中，页面的一半再自己的一半 */
+  left: 50%;
+  /* 本身的一半 */
+  transform: translateX(-50%);
+}
+.point li {
+  display: block;
+  float: left;
+  width:8px;
+  height: 8px;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  margin-left: 10px;
+}
+.point li:first-of-type{
+  margin-left: 0;
+}
+.point  li.active{
+  background-color: #fff;
+}
+
+/* 导航 */
+.list {
+  background-color:#fff;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.list li{
+  float: left;
+  width: 25%;
+  text-align: center;
+  margin-top:5px;
+}
+.list li img{
+  width: 50px;
+}
+.list  li p{
+  line-height:25px;
+}
+
+/* 产品 */
+.jd_product{
+  width: 100%;
+}
+.jd_productBox{
+  width: 100%;
+  margin-top: 10px;
+  background-color: #fff;
+  /*添加边框阴影*/
+  box-shadow: 1px 1px 1px #ccc;
+}
+.jd_productBox  > .jd_pTip{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #ccc;
+  color: #666;
+}
+.jd_productBox  > .jd_pTip > h3{
+  position: relative;
+  padding-left: 30px;
+}
+.jd_productBox .jd_pTip h3::before{
+  content: "";
+  width: 3px;
+  height: 12px;
+  background-color: #e92322;
+  left: -8px;
+  top: 9px;
+  position: absolute;
+}
+
+/*产品块图片超链接*/
+.a_50{
+  width: 50%;
+  display: block;
+}
+.a_50 img {
+  width: 100%;
+  display: block;
+}
+.b_left{
+  border-left: 1px solid #ccc;
+}
+.b_bottom{
+  border-bottom: 1px solid #ccc;
+}
+.b_right{
+  border-right:1px solid #ccc;
+}
+
+/*设置一个样式标记：秒杀块样式开始*/
+.jd_sk > .jd_pTip{
+  border-bottom: none;
+}
+.jd_sk > .jd_pTip .jd_sk_icon{
+  width: 16px;
+  height: 20px;
+  background: url("../images/seckill-icon.png");
+  background-size: 16px 20px;
+  margin-top:3px;
+}
+.jd_sk > .jd_pTip .jd_sk_text{
+  color: #e92322;
+}
+.jd_sk > .jd_pTip .jd_sk_time > span{
+  width: 13px;
+  height: 18px;
+  display: inline-block;
+  line-height: 18px;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+}
+ /* 设置为这样子 ： */
+.jd_sk > .jd_pTip .jd_sk_time > span:nth-last-of-type(3n){
+  color: #000;
+  background-color: transparent;
+  width: 8px;
+}
+
+.jd_sk .jd_pContent {
+  padding: 20px;
+}
+.jd_sk .jd_pContent > ul{
+  width: 100%;
+}
+.jd_sk .jd_pContent ul li{
+  text-align: center;
+  /* display: block; */
+  width: 33.33%;
+  float: left;
+}
+.jd_sk .jd_pContent ul li img{
+  width: 60%;
+}
